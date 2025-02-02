@@ -1,5 +1,5 @@
-#ifndef sumatoria_hpp
-#define sumatoria_hpp
+#ifndef SUMATORIA_HPP
+#define SUMATORIA_HPP
 
 int sumatoria(int n);
 
