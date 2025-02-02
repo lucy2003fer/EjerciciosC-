@@ -1,6 +1,6 @@
-#ifndef matrizEspejo_hpp
-#define matrizEspejo_hpp
+#ifndef matriz_hpp
+#define matriz_hpp
 
-void matrizEspejo();
+void matriz();
 
 #endif
