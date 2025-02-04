@@ -1,35 +1,24 @@
+#include "frecuencia.hpp"
+#include <unordered_map>
+#include <algorithm>
 #include <iostream>
-#include <string>
+using namespace std;
 
-char caracterMasComun(const std::string& texto) {
-    int frecuencia[256] = {0};  
-
+char caracterMasComun(const string& texto) {
+    unordered_map<char, int> frecuencia;
     for (char c : texto) {
-        
-        frecuencia[c]++; 
+        frecuencia[c]++;
     }
 
-    
-    char caracterComun = texto[0];
-    int maxFrecuencia = 0;
-    for (char c : texto) {
-        if (frecuencia[c] > maxFrecuencia) {
-            maxFrecuencia = frecuencia[c];
-            caracterComun = c;
+    char maxCaracter = texto[0];
+    int maxFrecuencia = frecuencia[maxCaracter];
+
+    for (const auto& par : frecuencia) {
+        if (par.second > maxFrecuencia) {
+            maxCaracter = par.first;
+            maxFrecuencia = par.second;
         }
     }
 
-    return caracterComun;
+    return maxCaracter;
 }
-
-int main() {
-    std::string texto;
-    std::cout << "Ingrese una cadena de texto: ";
-    std::getline(std::cin, texto);
-    
-    char resultado = caracterMasComun(texto);
-    std::cout << "El carácter más común es: " << resultado << std::endl;
-
-    return 0;
-}
-
