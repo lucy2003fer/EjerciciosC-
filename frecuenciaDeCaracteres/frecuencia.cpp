@@ -2,13 +2,24 @@
 #include <string>
 
 char caracterMasComun(const std::string& texto) {
-    int frecuencia[256] = {0}; 
+    int frecuencia[256] = {0};  
 
     for (char c : texto) {
+        
+        frecuencia[c]++; 
     }
 
     
-    return texto[0];  
+    char caracterComun = texto[0];
+    int maxFrecuencia = 0;
+    for (char c : texto) {
+        if (frecuencia[c] > maxFrecuencia) {
+            maxFrecuencia = frecuencia[c];
+            caracterComun = c;
+        }
+    }
+
+    return caracterComun;
 }
 
 int main() {
@@ -21,3 +32,4 @@ int main() {
 
     return 0;
 }
+
