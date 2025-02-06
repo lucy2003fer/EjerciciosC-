@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-bool esTableroValido(const array<array<int, 9>, 9>& tablero) {
+bool tableroValido(const array<array<int, 9>, 9>& tablero) {
 
     for (int i = 0; i < 9; i++) {
         bool numeros[10] = {false}; 
