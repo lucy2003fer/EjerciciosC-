@@ -24,10 +24,9 @@ int main() {
     }
 
     std::vector<std::vector<int>> subconjuntos;
-    generarSubconjuntos(conjunto); // ERROR: Falta el segundo parámetro
+    generarSubconjuntos(conjunto, subconjuntos);
 
     imprimirSubconjuntos(subconjuntos);
 
     return 0;
 }
-
